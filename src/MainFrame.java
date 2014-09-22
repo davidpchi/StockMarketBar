@@ -1,8 +1,8 @@
 import javax.swing.JFrame;
 
-public class MainFrame extends JFrame{
+public class MainFrame {
 	public static void main(String[] args) {
-		MainFrame frame = new MainFrame();
+		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		MainPanel test = new MainPanel();
@@ -11,5 +11,15 @@ public class MainFrame extends JFrame{
 		
 		frame.pack();
 		frame.setVisible(true);
+		
+		JFrame controlFrame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		ControlPanel controlPanel = new ControlPanel(test);
+		
+		controlFrame.add(controlPanel);
+		controlFrame.pack();
+		controlFrame.setVisible(true);
+		
 	}
 }

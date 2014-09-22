@@ -117,12 +117,19 @@ public class MainPanel extends JPanel{
         Scanner temp = new Scanner(System.in);
         System.out.println("ENTER DRINK SELECTION:");
         int selection = temp.nextInt();
+    	System.out.println("HOW MANY DRINKS?");
+    	int amount = temp.nextInt();
+    	
+    	buyDrinks(selection, amount);
+	}
+	
+	public void buyDrinks(int drinkID, int drinkNo) {
+        int selection = drinkID;
         if (selection >= drinksList.size()) {
         	System.out.println("INVALID SELECTION");
         }
         else {
-        	System.out.println("HOW MANY DRINKS?");
-        	int amount = temp.nextInt();
+        	int amount = drinkNo;
         	//increase the price for this individual drink, and decrease the price of others
         	for (int i = 0 ; i < drinksList.size(); i++) {
         		if (selection == i) {
